@@ -1,4 +1,4 @@
-package com.picknorthernvibeplaces
+package com.picknorthern.vibeplaces
 
 import android.app.Application
 import com.facebook.react.PackageList

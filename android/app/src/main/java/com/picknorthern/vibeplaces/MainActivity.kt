@@ -1,4 +1,4 @@
-package com.picknorthernvibeplaces
+package com.picknorthern.vibeplaces
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
