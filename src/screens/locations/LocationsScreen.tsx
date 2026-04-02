@@ -9,6 +9,7 @@ import {
   Image,
   Platform,
   useWindowDimensions,
+  Share,
 } from 'react-native';
 import { LOCATIONS, Location } from '../../data/locations';
 
@@ -28,6 +29,14 @@ export default function LocationsScreen({ navigation }: any) {
   );
 
   const topInset = Platform.OS === 'android' ? 20 : 0;
+
+  const handleShare = async (item: Location) => {
+    try {
+      await Share.share({
+        message: `${item.title}\n${item.description}\n${item.lat}, ${item.lng}`,
+      });
+    } catch (e) {}
+  };
 
   return (
     <SafeAreaView style={s.container}>
@@ -166,6 +175,7 @@ export default function LocationsScreen({ navigation }: any) {
                       paddingHorizontal: 12,
                     },
                   ]}
+                  onPress={() => handleShare(item)}
                 >
                   <Text style={[s.btnPurpleText, isVerySmall && { fontSize: 11 }]}>
                     Share
